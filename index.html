@@ -16,16 +16,17 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="header__title">Что такое Grid, и с чем его едят</div>
+            <div class="header__title">Что такое Grid</div>
             <div class="header__lab-num">Лабораторная работа N2</div>
         </header>
         <div class="main-wrapper">
             <button id="sidebar-open-button" class="sidebar__open-button">Навигация</button>
             <aside class="sidebar" id="sidebar">
                 <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="#form" class="sidebar__link">Форма</a></li>
                     <li class="sidebar__item">
-                        <a href="#" class="sidebar__link">Grid-контейнер</a>
-                        <ul class="sidebar__submenu">
+                        <a href="#grid-container" class="sidebar__link">Grid контейнер и элементы</a>
+                        <!-- <ul class="sidebar__submenu">
                             <li class="sidebar__item">
                                 <a href="#" class="sidebar__link sidebar__link_subsection">Подраздел 1</a>
                             </li>
@@ -35,17 +36,364 @@
                             <li class="sidebar__item">
                                 <a href="#" class="sidebar__link sidebar__link_subsection">Подраздел 1</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li class="sidebar__item"><a href="#" class="sidebar__link">Grid-Элементы</a></li>
-                    <li class="sidebar__item"><a href="#" class="sidebar__link">Линии, треки, ячейки, области</a></li>
-                    <li class="sidebar__item"><a href="#" class="sidebar__link">something</a></li>
-                    <li class="sidebar__item"><a href="#" class="sidebar__link">something</a></li>
+                    <li class="sidebar__item"><a href="#lines-tracks-cells-region" class="sidebar__link">Линии, треки, ячейки, области</a></li>
+                    <li class="sidebar__item"><a href="#some-structure" class="sidebar__link">Формирование явной и неявной структуры</a></li>
+                    <li class="sidebar__item"><a href="#elements-resizing" class="sidebar__link">Управление размерами эл-тов</a></li>
+                    <li class="sidebar__item"><a href="#ram-layout" class="sidebar__link">Шаблон RAM</a></li>
+                    <li class="sidebar__item"><a href="#elements-alignment" class="sidebar__link">Выравнивание эл-тов</a></li>
+                    <li class="sidebar__item"><a href="#elements-order" class="sidebar__link">Порядок эл-тов</a></li>
+                    <li class="sidebar__item"><a href="#elements-location" class="sidebar__link">Способы расположения эл-тов в сетке</a></li>
                 </ul>
             </aside>
-            <main class="main">dasdsa</main>
+            <main class="main">
+                <section id="form-section">
+                    <a href="#" name="form"></a>
+                    <h2>Форма</h2>
+    
+                    <div class="section__item">
+                        <form id="form" class="form">
+                            <div class="form__inputs">
+                                <div class="form__item">
+                                    <label for="name">Имя</label>
+                                    <input class="form__input" name="name" id="name" type="text">
+                                </div>
+                                <div class="form__item">
+                                    <label for="surname">Фамилия</label>
+                                    <input class="form__input" name="surname" id="surname" type="text">
+                                </div>
+                                <div class="form__item">
+                                    <label for="phone">Телефон</label>
+                                    <input class="form__input" name="phone" id="phone" type="tel">
+                                </div>
+                                <div class="form__item">
+                                    <label for="index">Индекс</label>
+                                    <input class="form__input" name="index" id="index" type="text">
+                                </div>
+                                <div class="form__item">
+                                    <label for="country">Страна</label>
+                                    <input class="form__input" name="country" id="country" type="text">
+                                </div>
+                                <div class="form__item">
+                                    <label for="city">Город</label>
+                                    <input class="form__input" name="city" id="city" type="text">
+                                </div>
+    
+                            </div>
+                            <div class="form__item form__item_button">
+                                <input class="form__button" type="submit" value="Отправить">
+                            </div>
+                            
+                        </form>
+                    </div>
+                </section>
+                <section id="container" class="wrapper">
+                    <a name="grid-container"></a>
+                    <h2>Grid контейнер и элементы</h2>
+                    
+                    <div class="section__item">
+                        <h3>Grid-Inline 3 Контейнера без переноса</h3>
+                        <div class="container-inline">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                        <div class="container-inline">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                        <div class="container-inline">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+            
+                    
+                    <div class="section__item grid-block">
+                        <h3>Grid Блоки 2 Контейнера с переносом</h3>
+                        <div class="container">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                        |||||||||||||||||||||||||
+                        <div class="container">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+                </section>
+    
+                <section id="lines">
+                    <h2>Линии, трейки, ячейки, области</h2>
+                    <a href="#" name="lines-tracks-cells-region"></a>
+                    
+                    <div class="section__item">
+    
+                        <h3>Gap: 15px</h3>
+                        <div class="container g-t-b">
+                            <div class="box">(1 fr, 1fr)</div>
+                            <div class="box">(1 fr, 3 fr)</div>
+                            <div class="box">(1 fr, 5 fr)</div>
+                            <div class="box">(3 fr, 1 fr)</div>
+                            <div class="box">(3 fr, 3 fr)</div>
+                            <div class="box">(3 fr, 5 fr)</div>
+                            <div class="box">(5 fr, 1 fr)</div>
+                            <div class="box">(5 fr, 3 fr)</div>
+                            <div class="box">(5 fr, 5 fr)</div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="section__item">
+                        <h3>Области</h3>
+                        <div class="container g-t-a">
+                            <div class="box box_header">HEADER</div>
+                            <div class="box box_side">SIDE</div>
+                            <div class="box box_main">MAIN</div>
+                            <div class="box box_footer">FOOTER</div>
+                        </div>
+                    </div>
+    
+    
+                </section>
+    
+                <section id="structure" class="wrapper">
+                    <a href="#" name="some-structure"></a>
+                    <h2>Формирование явной и неявной структуры grid</h2>
+    
+                    <div class="section__item">
+                        <h3>Явная структура (задано явное количество колонок и рядов, очередь и размеры элементов)</h3>
+                        <div class="container g-t-a">
+                            <div class="box box_header">HEADER</div>
+                            <div class="box box_side">SIDE</div>
+                            <div class="box box_main">MAIN</div>
+                            <div class="box box_footer">FOOTER</div>
+                        </div>
+                    </div>
+                    
+                    <div class="section__item">
+                        <h3>Неявная структура</h3>
+                        <p>Грид в случае необходимости может автоматически создавать колонки и ряды. Чтобы управлять их характеристиками, есть свойста <span class="colored">grid-auto-columns</span> и <span class="colored">grid-auto-rows</span></p>
+                        <h4>Columns и Rows не указаны</h4>
+                        <p>Грид создает одноколоночную сетку, высота ряда зависит от размера контента</p>
+                        <div class="container impl-1">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+    
+                        </div>            
+    
+                        <h4>Columns и Rows не указаны</h4>
+                        <p>Здесь высота ряда задана через grid-auto-rows: 300px</p>
+                        <div class="container impl-3">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>            
+    
+    
+                        
+                        <h4>Columns и Rows не указаны, gria-auto-flow: column</h4>
+                        <p>Создается сетка в один ряд</p>
+                        <div class="container impl-2">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+    
+                        </div>                    
+    
+    
+                        <h4>Grid-auto-flow: dense</h4>
+                        <div class="container implicit implicit-dense">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+    
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+                <section id="size">
+                    <a href="#" name="elements-resizing"></a>
+                    <h2>Управление размерами элементов</h2>
+    
+                    <div class="section__item">
+                        <h3>Auto-fill</h3>
+                        <div class="container auto-fill">
+                            <div class="box">minmax(200px, 1fr)</div>
+                            <div class="box">minmax(200px, 1fr)</div>
+                            <div class="box">minmax(200px, 1fr)</div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="section__item">
+                        <h3>Auto-fit</h3>
+                        <div class="container auto-fit">
+                            <div class="box">minmax(200px, 1fr)</div>
+                            <div class="box">minmax(200px, 1fr)</div>
+                            <div class="box">minmax(200px, 1fr)</div>
+    
+                        </div>
+                    </div>
+                    
+                    <div class="section__item">
+                        <h3>Явно заданные размеры</h3>
+                        <div class="container con-expl">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+    
+                        </div>
+                    </div>
+    
+    
+                </section>
+    
+                <section id="ram">
+                    <a href="#" name='ram-layout'></a>
+                    <h2>Шаблон RAM (repeat, auto, minmax)</h2>
+                    <div class="section__item">
+                        <h3></h3>
+                        <div class="container ram">
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                </section>
+    
+                
+                <section id="align">
+                    <a href="#" name="elements-alignment"></a>
+                    <h2>Выравнивание элементов</h2>
+                    <div class="section__item">
+                        <h3>Justify Self </h3>
+                        <div class="container grid-items">
+                            <div class="box">default</div>
+                            <div class="box item-box-2">END</div>
+                            <div class="box item-box-3">STRETCH</div>
+                            <div class="box item-box-4">Center</div>
+                        </div>
+                    </div>
+            
+                    <div class="section__item">
+                        <h3>Align Self </h3>
+                        <div class="container align-items">
+                            <div class="box align-box-2">Stretch</div>
+                            <div class="box align-box-3">End</div>
+                            <div class="box align-box-4">Center</div>
+                        </div>
+                    </div>
+            
+                </section>
+    
+                <section id="order">
+                    <a href="#" name="elements-order"></a>
+                    <h2>Порядок элементов</h2>
+    
+                    <div class="section__item">
+                        <h3>Обычный</h3>
+                        <div class="container con-ord">
+                            <div class="box">DOM1</div>
+                            <div class="box">DOM2</div>
+                            <div class="box">DOM3</div>
+                            <div class="box">DOM4</div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="section__item">
+                        <h3>Измененный</h3>
+                        <div class="container con-ord">
+                            <div class="box box-1">DOM1</div>
+                            <div class="box box-2">DOM2</div>
+                            <div class="box box-3">DOM3</div>
+                            <div class="box box-4">DOM4</div>
+    
+                        </div>
+                    </div>
+    
+                </section>
+    
+                <section id="grid">
+                    <a href="#" name="elements-location"></a>
+                    <h2>Cпособы расположения элементов в сетке</h2>
+    
+                    <div class="section__item">
+                        <h3>Галерея</h3>
+                        <div class="container gallery">
+                    
+                            <div class="gallery__item gallery__item_1">
+                                <img src="./src/images/project-1.jpg" alt="">
+                            </div>
+                            
+                            <div class="gallery__item gallery__item_2">
+                                <img src="./src/images/project-2.jpg" alt="">
+                            </div>
+                            
+                            <div class="gallery__item gallery__item_3">
+                                <img src="./src/images/project-3.jpg" alt="">
+                            </div>
+                    
+                            <div class="gallery__item gallery__item_4">
+                                <img src="./src/images/project-4.jpg" alt="">
+                            </div>
+                            
+                            <div class="gallery__item gallery__item_5">
+                                <img src="./src/images/project-5.jpg" alt="">
+                            </div>
+                            
+                            <div class="gallery__item gallery__item_6">
+                                <img src="./src/images/project-6.jpg" alt="">
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="section__item">
+                        <h3>Свойство grid-template-areas у родителя и grid-area у дочерних эл-тов</h3>
+                        <div class="container g-t-a">
+                            <div class="box box_header">HEADER</div>
+                            <div class="box box_side">SIDE</div>
+                            <div class="box box_main">MAIN</div>
+                            <div class="box box_footer">FOOTER</div>
+                        </div>
+                    </div>
+    
+    
+    
+                </section>
+            </main>
         </div>
-        <footer class="footer">footer</footer>
         <script src="./src/scripts.bundle.js"></script>
     </div>
 </body>
